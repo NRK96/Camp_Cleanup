@@ -37,6 +37,7 @@ for line in lines:
             pair = []
             counter = 0
 
+# PART 1
 # Go through each pair in the list and compare them to see if the first assignment contains the second or vice versa.
 # Note that counter will always be zero when we get to this point as the assignments are divided into groups of two.
 for pair in assignment_list:
@@ -60,5 +61,20 @@ for pair in assignment_list:
         counter += 1
 
 print(f'Number of assignments contained in other assignments: {counter}')
+
+# PART 2
+counter = 0
+boolean_sum = 0
+
+for pair in assignment_list:
+    if pair[0] != pair[1]:
+        # There is some overlap. increment counter.
+        if np.isin(pair[0], pair[1]).__contains__(True):
+            counter += 1
+    # They are the same, increment counter.
+    else:
+        counter += 1
+
+print(f'Number of assignments with any overlap: {counter}')
 
 file.close()
