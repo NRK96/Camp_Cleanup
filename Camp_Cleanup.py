@@ -1,6 +1,5 @@
 import os.path
 import sys
-from typing import Counter
 import numpy as np
 
 current_directory = os.path.dirname(os.path.realpath(__file__))
